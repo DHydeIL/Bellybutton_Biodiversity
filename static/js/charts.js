@@ -104,8 +104,10 @@ function buildCharts(sample) {
         t: 100,
         b: 100}
     };
+
+    var config = {responsive: true}
     // 10. Use Plotly to plot the data with the layout. 
-    Plotly.newPlot("bar", [barData], barLayout);
+    Plotly.newPlot("bar", [barData], barLayout, config);
 
     // 1. Create the trace for the bubble chart.
     var bubbleData = [{
@@ -138,15 +140,14 @@ function buildCharts(sample) {
         l: 100,
         r: 100,
         t: 100,
-        b: 100
-      }
+        b: 100}
       // height: 600,
       // width: 1200
       
     };
 
     // 3. Use Plotly to plot the data with the layout.
-    Plotly.newPlot("bubble", bubbleData, bubbleLayout); 
+    Plotly.newPlot("bubble", bubbleData, bubbleLayout, config); 
 
     // 4. Create the trace for the gauge chart.
      var gaugeData = [{
@@ -170,11 +171,17 @@ function buildCharts(sample) {
     ];
     
     // 5. Create the layout for the gauge chart.
-    var gaugeLayout = { width: 600, height: 450, margin: { t: 0, b: 0 }
+    var gaugeLayout = { 
+      
+      margin: {
+      l: 100,
+      r: 100,
+      t: 100,
+      b: 100}
      
     };
 
     // 6. Use Plotly to plot the gauge data and layout.
-    Plotly.newPlot('gauge', gaugeData, gaugeLayout);
+    Plotly.newPlot('gauge', gaugeData, gaugeLayout, config);
   });
 }
